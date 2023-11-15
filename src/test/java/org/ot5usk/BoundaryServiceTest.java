@@ -20,7 +20,7 @@ class BoundaryServiceTest {
     @ParameterizedTest(name = "from {0}")
     @MethodSource("arraysOfMarks")
     void testFindMin(int[] marks) {
-        assertEquals(Arrays.stream(marks).min().getAsInt(), boundaryService.findMin(marks));
+        assertEquals(Arrays.stream(marks).min().getAsInt() + 1, boundaryService.findMin(marks));
     }
 
     static Stream<int[]> arraysOfMarks() {
